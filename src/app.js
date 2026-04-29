@@ -12,6 +12,7 @@ const app = fastify({
 const cors = require('@fastify/cors');
 const dbPlugin = require('./plugins/db.plugin');
 
+
 // routes
 const routes = require('./routes');
 
@@ -19,16 +20,20 @@ const routes = require('./routes');
 // Register Plugins
 // --------------------
 app.register(cors, {
-  origin: true // allow all (tighten later in prod)
+  origin: true // Allow requests from any origin
 });
 
 // DB connection (decorates app with app.db)
 app.register(dbPlugin);
 
+app.register(require('./plugins/jwt.plugin'));
+
 // --------------------
 // Register Routes
 // --------------------
 app.register(routes);
+
+
 
 // --------------------
 // Global Error Handler (important)

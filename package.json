@@ -15,9 +15,11 @@
   "dependencies": {
     "@fastify/cors": "^11.2.0",
     "@fastify/env": "^6.0.0",
+    "@fastify/jwt": "^10.0.0",
     "dotenv": "^17.4.2",
     "fastify": "^5.8.5",
-    "mysql2": "^3.22.3"
+    "mysql2": "^3.22.3",
+    "twilio": "^6.0.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.14"

@@ -5,6 +5,7 @@ exports.createUser = async (db, userData) => {
     gender,
     dob,
     address,
+    age,
     state,
     pincode
   } = userData;
