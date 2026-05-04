@@ -23,3 +23,33 @@ exports.getPharmacies = async (request, reply) => {
     });
   }
 };
+
+
+  exports.addPharmacies = async (request, reply) => {
+
+  try {
+
+    const body = request.body;
+
+    const result = await service.addPharmacies(
+      request.server.db,
+      body
+    );
+
+    return {
+      success: true,
+      message: "Pharmacy added successfully",
+      data: result
+    };
+
+  } catch (error) {
+
+    request.log.error(error);
+
+    return reply.status(500).send({
+      success: false,
+      message: "Failed to add Pharmacy"
+    });
+
+  }
+};

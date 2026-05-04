@@ -6,6 +6,11 @@ async function pharmacyRoutes(fastify, options) {
     "/getPharmacies",
     controller.getPharmacies
   );
+
+    fastify.post(
+    "/addPharmacies",
+    controller.addPharmacies
+  );
 }
 
 module.exports = pharmacyRoutes;
